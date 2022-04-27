@@ -1,0 +1,25 @@
+
+# task 2
+ A) How many tons worth of fruit does an average seller have?
+
+SELECT
+	seller_info.seller_id, AVG(seller_info.fruit_weight)
+FROM
+	seller_info
+GROUP BY
+	seller_info.seller_id
+
+ B) How many sellers have at least one client who purchased their fruit?
+
+SELECT
+    COUNT(s_id) AS count_of_sellers
+FROM(
+    SELECT
+        consuption_info.seller_id AS s_id
+    FROM
+        consuption_info
+    GROUP BY
+        consuption_info.seller_id
+    HAVING
+        count(consuption_info.client_id) >= 1
+)

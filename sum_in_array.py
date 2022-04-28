@@ -57,7 +57,7 @@ print(end-start)  # 3.6050024032592773
 def end_start(sorted_array, S):
     start = 0
     end = -1
-    while start != end and start <= len(sorted_array) and end >= 0 - len(sorted_array):
+    while sorted_array[start] != sorted_array[end]:
             summ = sorted_array[start] + sorted_array[end]
             if summ == S:
                 print(sorted_array[start], sorted_array[end])
@@ -71,4 +71,4 @@ def end_start(sorted_array, S):
 start = time.time()
 end_start(list(range(-100, 10000, 1)), 50)
 end = time.time()
-print(end-start)  # 0.004002571105957031
+print(end-start)  # 0.0029671192169189453

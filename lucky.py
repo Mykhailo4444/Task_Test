@@ -43,4 +43,4 @@ lucky_series(200)
 # The Value of longest: 
 # 655655565
 
-print("opa opa opachinaaa")
+print("opa opa opachinaaaa")
